@@ -11,7 +11,8 @@
       <ul>
         <% skills.forEach(function(s) { %>
         <li>
-          <%= s.id %> - <%= s.name %> - <%=s.done? 'done' : 'not done' %>
+          <a href="/skills/<%= s.id %>"><%= s.name %></a>
+          - <%=s.done? 'done' : 'not done' %>
         </li>
         <% }); %>
       </ul>
