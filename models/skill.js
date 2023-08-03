@@ -15,7 +15,8 @@ module.exports = {
   getAll,
   getOne,
   create,
-  deleteOne
+  deleteOne,
+  update,
 };
 
 function getAll() {
@@ -43,6 +44,22 @@ function deleteOne(id) {
   // All properties attached to req.params are strings!
   id = parseInt(id);
   // Find the index based on the id of the todo object
-  const idx = skills.findIndex(skill => skill.id === id);
+  const idx = skills.findIndex((skill) => skill.id === id);
   skills.splice(idx, 1);
+}
+
+function update(data) {
+  // console.log(data);
+  let index = skills.findIndex((s) => s.id === data.id);
+  // console.log("current skill index", index);
+
+  // updatedSkill = new object literal
+  const updateData = { ...data };
+  // if the incoming data.done is 'on' -> set the property to true, otherwise set it to false
+  updateData.done = data.done === `on` ? true : false;
+
+  let updatedSkill = { ...skills[index], ...updateData };
+  console.log(updatedSkill)
+  
+  skills.splice(index, 1, updatedSkill);
 }

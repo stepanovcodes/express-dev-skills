@@ -11,6 +11,7 @@
     </form>
     <a href="/skills/<%= s.id %>"><%= s.name %></a>
     - <%=s.done? 'done' : 'not done' %>
+    <a href="/skills/<%= s.id %>/edit">Edit</a>
   </li>
   <% }); %>
 </ul>

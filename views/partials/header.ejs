@@ -3,7 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Skills</title>
+    <% if (typeof title !== "undefined"){ %>
+      <title><%= title %></title>
+  <%}%>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
+    <nav>
+      <a href="/">Home</a> |
+      <a href="/skills">All Skills</a> |
+      <a href="/skills/new">Add Skill</a>
+  </nav>
