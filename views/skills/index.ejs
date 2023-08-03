@@ -1,21 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Skills</title>
-  </head>
-  <body>
-    <body>
-      <h3>My Skills as of <%= time %></h3>
-      <ul>
-        <% skills.forEach(function(s) { %>
-        <li>
-          <a href="/skills/<%= s.id %>"><%= s.name %></a>
-          - <%=s.done? 'done' : 'not done' %>
-        </li>
-        <% }); %>
-      </ul>
-    </body>
-  </body>
-</html>
+<%- include('../partials/header') %>
+<h3>My Skills as of <%= time %></h3>
+<ul>
+  <a href="/skills/new">Add Skill</a>
+  <% skills.forEach(function(s) { %>
+  <li>
+    <a href="/skills/<%= s.id %>"><%= s.name %></a>
+    - <%=s.done? 'done' : 'not done' %>
+  </li>
+  <% }); %>
+</ul>
+<%- include('../partials/footer') %>

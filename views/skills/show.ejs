@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Skills</title>
-  </head>
-  <body>
-    <body>
+<%- include('../partials/header') %>
+
+
       <h3><%= skill.name %></h3>
       <h3>Complete: <%= skill.done ? 'Yes' : 'No' %></h3>
       <a href="/skills"> Back to Skills List</a>
-    </body>
-  </body>
-</html>
+
+
+<%- include('../partials/footer') %>
