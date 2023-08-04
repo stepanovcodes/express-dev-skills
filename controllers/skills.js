@@ -53,5 +53,5 @@ function update(req, res) {
   // res.send(obj);
   // console.log(obj);
   Skill.update(obj);
-  res.redirect(`/skills/${id}`);
+  res.redirect(`/skills`);
 }

@@ -31,13 +31,12 @@ function getOne(id) {
   return skills.find((skill) => skill.id === id);
 }
 
-function create(skill) {
+function create(data) {
   // Add the id
-  skill.id = Date.now() % 1000000;
-  // New todos wouldn't be done :)
-  skill.done = false;
-  skills.push(skill);
-  // console.log(skills)
+  const newSkill = {...data}
+  newSkill.id = Date.now() % 1000000;
+  newSkill.done = data.done ? true : false ;
+  skills.push(newSkill);
 }
 
 function deleteOne(id) {
